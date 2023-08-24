@@ -2,6 +2,7 @@ from random import randint
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Функция аттаки."""
     if char_class == 'warrior':
         return (
             f'{char_name: str} нанёс урон противнику равный '
@@ -20,6 +21,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Функция защиты."""
     if char_class == 'warrior':
         return f'{char_name} блокировал {10 + randint(5, 10)} урона'
     elif char_class == 'mage':
@@ -29,6 +31,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Функция специального умения."""
     if char_class == 'warrior':
         return (
             f'{char_name} применил специальное умение '
@@ -47,6 +50,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Функция старта тренировки."""
     if char_class == 'warrior':
         print(
             f'{char_name}, '
@@ -63,11 +67,11 @@ def start_training(char_name: str, char_class: str) -> str:
             'ты Лекарь — чародей, способный исцелять раны.',
         )
     print('Потренируйся управлять своими навыками.')
-    print(
+    (print(
         'Введи одну из команд: attack — чтобы атаковать противника, '
         'defence — чтобы блокировать атаку противника или '
         'special — чтобы использовать свою суперсилу.',
-    )
+    ))
     print('Если не хочешь тренироваться, введи команду skip.')
     cmd: None = None
     while cmd != 'skip':
@@ -82,6 +86,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Функция выбора класса героя."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
